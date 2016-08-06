@@ -17,7 +17,7 @@ Setting this property to <code>nil</code> removes the gradient background.
 ###Usage example
 ```swift
 class ViewController : UIViewController {
-  @IBOutlet var mView: GradientBackgroundView! // Link this to your ViewController's view
+  @IBOutlet var mView: GradientBackgroundView! // Link this to your ViewController's view. Don't forget to assign the GradientBackgroundView class to this view in Interface Builder.
   
   override func viewDidLoad() { 
     superViewDidLoad()
