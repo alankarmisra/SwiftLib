@@ -1,5 +1,5 @@
 //
-//  UIView+GradientBackground.swift
+//  UIView+ViewWithGradientBackground.swift
 //  AnimationExperiments5
 //
 //  Created by Alankar Avinash Misra on 8/6/16.
@@ -11,6 +11,8 @@ import QuartzCore
 
 
 class ViewWithGradientBackground:UIView {
+    private var mOriginalBackgroundColor:UIColor?
+    
     var gradientBackground:CAGradientLayer? {
         get {
             guard let sublayers = self.layer.sublayers else {
@@ -31,13 +33,17 @@ class ViewWithGradientBackground:UIView {
             
             if let newValue = newValue {
                 self.layer.sublayers?.insert(newValue, atIndex: 0)
+            } else if mOriginalBackgroundColor != nil {
+                self.backgroundColor = mOriginalBackgroundColor
             }
         }
     }
     
     func setGradientBackgroundWithColors(colors:[AnyObject]) {
+        mOriginalBackgroundColor = self.backgroundColor
+        self.backgroundColor = UIColor.blackColor() // Otherwise rotation allows the non-gradient background to show through
+        
         if gradientBackground != nil {
-            print("Removing existing bg layer")
             self.layer.sublayers?.removeAtIndex(0)
         }
         
