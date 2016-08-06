@@ -1,7 +1,7 @@
 #Classes
 
 ##ViewWithGradientBackground : UIView
-An extremely simplistic UIView subclass to allow for a gradient background. It exposes the following method:
+A minimalist UIView convenience subclass to allow for a gradient background. It exposes the following method:
 ```swift
 func setGradientBackgroundWithColors(colors:[AnyObject])
 ```
