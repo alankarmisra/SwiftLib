@@ -1,16 +1,12 @@
 //
-//  UIView+ViewWithGradientBackground.swift
-//  AnimationExperiments5
-//
-//  Created by Alankar Avinash Misra on 8/6/16.
-//  Copyright © 2016 Alankar Misra. All rights reserved.
+//  GradientBackgroundView.swift
 //
 
 import UIKit
 import QuartzCore
 
 
-class ViewWithGradientBackground:UIView {
+class GradientBackgroundView:UIView {
     private var mOriginalBackgroundColor:UIColor?
     
     var gradientBackground:CAGradientLayer? {
